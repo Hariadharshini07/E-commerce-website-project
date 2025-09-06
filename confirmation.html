@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color: lavender;">
+
+  <!-- Header -->
+  <section id="header">
+    <a href="index.html"><img src="img/logo.png" class="logo" alt="Logo"></a>
+    <div>
+      <ul id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Confirmation -->
+  <section id="confirmation" class="section-p1">
+    <h2>🎉 Thank You for Your Order!</h2>
+    <p>Your order has been placed successfully. Below is your bill:</p>
+
+    <div class="customer-info">
+      <h3>Customer Information</h3>
+      <p><strong>Name:</strong> <span id="c-name"></span></p>
+      <p><strong>Email:</strong> <span id="c-email"></span></p>
+      <p><strong>Phone:</strong> <span id="c-phone"></span></p>
+      <p><strong>Address:</strong> <span id="c-address"></span></p>
+      <p><strong>Payment:</strong> <span id="c-payment"></span></p>
+    </div>
+
+    <div class="bill">
+      <h3>Order Summary</h3>
+      <table width="100%">
+        <thead>
+          <tr>
+            <td>Product</td>
+            <td>Price</td>
+            <td>Qty</td>
+            <td>Total</td>
+          </tr>
+        </thead>
+        <tbody id="bill-items"></tbody>
+      </table>
+      <h3 id="bill-total">Grand Total: $0</h3>
+    </div>
+
+    <a href="shop.html" class="checkout-btn">Continue Shopping</a>
+  </section>
+
+  <script>
+    function loadConfirmation() {
+      let order = JSON.parse(localStorage.getItem("orderDetails")) || {};
+      document.getElementById("c-name").textContent = order.name || "";
+      document.getElementById("c-email").textContent = order.email || "";
+      document.getElementById("c-phone").textContent = order.phone || "";
+      document.getElementById("c-address").textContent = order.address || "";
+      document.getElementById("c-payment").textContent = order.payment || "";
+
+      let items = order.items || [];
+      let billItems = document.getElementById("bill-items");
+      let total = 0;
+      billItems.innerHTML = "";
+
+      items.forEach(item => {
+        let row = document.createElement("tr");
+        let itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        row.innerHTML = `<td>${item.title}</td><td>$${item.price}</td><td>${item.quantity}</td><td>$${itemTotal}</td>`;
+        billItems.appendChild(row);
+      });
+
+      document.getElementById("bill-total").textContent = "Grand Total: $" + total;
+
+      // Clear cart after confirmation
+      localStorage.removeItem("cart");
+      localStorage.removeItem("orderDetails");
+    }
+
+    window.onload = loadConfirmation;
+  </script>
+</body>
+</html>

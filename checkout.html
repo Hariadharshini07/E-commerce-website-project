@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color: lavender;">
+
+  <!-- Header -->
+  <section id="header">
+    <a href="index.html"><img src="img/logo.png" class="logo" alt="Logo"></a>
+    <div>
+      <ul id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a class="active" href="checkout.html">Checkout</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Checkout Section -->
+  <section id="checkout" class="section-p1">
+    <h2>Checkout</h2>
+
+    <div class="checkout-container">
+      <!-- Form -->
+      <div class="checkout-form">
+        <h3>Billing Details</h3>
+        <form id="checkout-form">
+          <label>Full Name</label>
+          <input type="text" id="name" required>
+          <label>Email</label>
+          <input type="email" id="email" required>
+          <label>Phone</label>
+          <input type="text" id="phone" required>
+          <label>Address</label>
+          <textarea id="address" rows="3" required></textarea>
+          <label>Payment Method</label>
+          <select id="payment" required>
+            <option value="">--Select--</option>
+            <option value="COD">Cash on Delivery</option>
+            <option value="Card">Credit/Debit Card</option>
+            <option value="UPI">UPI</option>
+          </select>
+          <button type="submit" class="checkout-btn">Place Order</button>
+        </form>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="checkout-summary">
+        <h3>Your Order</h3>
+        <ul id="order-items"></ul>
+        <p id="order-total"><strong>Total: $0</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function loadOrderSummary() {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let orderItems = document.getElementById("order-items");
+      let total = 0;
+      orderItems.innerHTML = "";
+
+      cart.forEach(item => {
+        let li = document.createElement("li");
+        let itemTotal = item.price * item.quantity;
+        li.textContent = `${item.title} (x${item.quantity}) - $${itemTotal}`;
+        orderItems.appendChild(li);
+        total += itemTotal;
+      });
+
+      document.getElementById("order-total").innerHTML = "<strong>Total: $" + total + "</strong>";
+    }
+
+    document.getElementById("checkout-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let orderDetails = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        address: document.getElementById("address").value,
+        payment: document.getElementById("payment").value,
+        items: JSON.parse(localStorage.getItem("cart")) || []
+      };
+
+      localStorage.setItem("orderDetails", JSON.stringify(orderDetails));
+      window.location.href = "confirmation.html";
+    });
+
+    window.onload = loadOrderSummary;
+  </script>
+</body>
+</html>

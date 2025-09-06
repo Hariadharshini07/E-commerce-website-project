@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Cara Shop</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f') no-repeat center center/cover;
+    }
+
+    .login-container {
+      width: 350px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    .login-container h2 { margin-bottom: 20px; color: #333; }
+
+    .login-container input {
+      width: 100%; padding: 12px; margin: 10px 0;
+      border: 1px solid #ccc; border-radius: 6px; font-size: 14px;
+    }
+
+    .login-container button {
+      width: 100%; padding: 12px; margin-top: 15px;
+      background: #088178; border: none; color: white;
+      font-size: 16px; border-radius: 6px; cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .login-container button:hover { background: #065c56; }
+
+    .login-container p { margin-top: 15px; font-size: 14px; }
+    .login-container a { color: #088178; text-decoration: none; }
+    .login-container a:hover { text-decoration: underline; }
+
+    .error { color: red; font-size: 14px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Enter Username" required>
+      <input type="password" id="password" placeholder="Enter Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <p id="errorMessage" class="error"></p>
+    <p>Don't have an account? <a href="register.html">Sign up</a></p>
+  </div>
+
+  <script>
+    // Simple demo credentials
+    const validUser = { username: "user123", password: "12345" };
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (username === validUser.username && password === validUser.password) {
+        // Save login state
+        localStorage.setItem("loggedInUser", username);
+
+        // Redirect to index page
+        window.location.href = "index.html";
+      } else {
+        document.getElementById("errorMessage").textContent = "❌ Invalid username or password!";
+      }
+    });
+  </script>
+
+</body>
+</html>

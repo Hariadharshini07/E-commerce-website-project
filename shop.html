@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cara Shop</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Your Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color: lavender;">
+
+  <!-- Header -->
+  <section id="header">
+    <a href="index.html"><img src="img/logo.png" class="logo" alt="Logo"></a>
+    <div>
+      <ul id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="shop.html">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li id="lg-bag"><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+      </ul>
+    </div>
+    <div id="mobile">
+      <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+      <i id="bar" class="fas fa-outdent"></i>
+    </div>
+  </section>
+
+  <!-- Page Banner -->
+  <section id="page-header">
+    <h2>#StayHome</h2>
+    <h1>On all products</h1>
+    <p>Save more with coupons & up to 70% off!</p>
+  </section>
+
+  <!-- Products -->
+  <section id="product1" class="section-p1">
+    <div class="pro-container">
+
+      <!-- ✅ Product 1 -->
+      <div class="pro">
+        <img src="img/products/f1.jpg" alt="">
+        <div class="des">
+          <span>Adidas</span>
+          <h5>Cartoon Astronaut T-shirt</h5>
+          <h4>$56</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Cartoon Astronaut T-shirt', 56, 'img/products/f1.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+      <!-- ✅ Product 2 -->
+      <div class="pro">
+        <img src="img/products/f2.jpg" alt="">
+        <div class="des">
+          <span>Nexe</span>
+          <h5>Leafy Edgy T-shirt</h5>
+          <h4>$78</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Leafy Edgy T-shirt', 78, 'img/products/f2.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+      <!-- ✅ Product 3 -->
+      <div class="pro">
+        <img src="img/products/f3.jpg" alt="">
+        <div class="des">
+          <span>Tommy Hilger</span>
+          <h5>Flory Magic T-shirt</h5>
+          <h4>$60</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Flory Magic T-shirt', 60, 'img/products/f3.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+      <!-- ✅ Product 4 -->
+      <div class="pro">
+        <img src="img/products/f5.jpg" alt="">
+        <div class="des">
+          <span>Dasae</span>
+          <h5>Blue Star T-shirt</h5>
+          <h4>$84</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Blue Star T-shirt', 84, 'img/products/f5.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+      <!-- ✅ Product 5 -->
+      <div class="pro">
+        <img src="img/products/f4.jpg" alt="">
+        <div class="des">
+          <span>Adidas</span>
+          <h5>Pinky Prince T-shirt</h5>
+          <h4>$87</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Pinky Prince T-shirt', 87, 'img/products/f4.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+      <!-- ✅ Product 6 -->
+      <div class="pro">
+        <img src="img/products/f6.jpg" alt="">
+        <div class="des">
+          <span>Jockey</span>
+          <h5>Jacky T-shirt</h5>
+          <h4>$90</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Jacky T-shirt', 90, 'img/products/f6.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+      <!-- ✅ Product 7 -->
+      <div class="pro">
+        <img src="img/products/f7.jpg" alt="">
+        <div class="des">
+          <span>Max</span>
+          <h5>Palazzo</h5>
+          <h4>$76</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Palazzo', 76, 'img/products/f7.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+      <!-- ✅ Product 8 -->
+      <div class="pro">
+        <img src="img/products/f8.jpg" alt="">
+        <div class="des">
+          <span>Lemma</span>
+          <h5>Saggy Tops</h5>
+          <h4>$86</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Saggy Tops', 86, 'img/products/f8.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+      <!-- ✅ Product 9 -->
+      <div class="pro">
+        <img src="img/products/n1.jpg" alt="">
+        <div class="des">
+          <span>Adidas</span>
+          <h5>Paley Gill Shirt</h5>
+          <h4>$56</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Paley Gill Shirt', 56, 'img/products/n1.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+      <!-- ✅ Product 10 -->
+      <div class="pro">
+        <img src="img/products/n2.jpg" alt="">
+        <div class="des">
+          <span>Nexe</span>
+          <h5>Stripped Shirt</h5>
+          <h4>$78</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Stripped Shirt', 78, 'img/products/n2.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+      <!-- ✅ Product 11 -->
+      <div class="pro">
+        <img src="img/products/n4.jpg" alt="">
+        <div class="des">
+          <span>Tommy Hilger</span>
+          <h5>Green Packy Shirt</h5>
+          <h4>$60</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Green Packy Shirt', 60, 'img/products/n4.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+      <!-- ✅ Product 12 -->
+      <div class="pro">
+        <img src="img/products/n5.jpg" alt="">
+        <div class="des">
+          <span>Dasae</span>
+          <h5>Blue Star Shirt</h5>
+          <h4>$84</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Blue Star Shirt', 84, 'img/products/n5.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+      <!-- ✅ Product 13 -->
+      <div class="pro">
+        <img src="img/products/n4.jpg" alt="">
+        <div class="des">
+          <span>Adidas</span>
+          <h5>Packy Prince Shirt</h5>
+          <h4>$87</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Packy Prince Shirt', 87, 'img/products/n4.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+      <!-- ✅ Product 14 -->
+      <div class="pro">
+        <img src="img/products/n6.jpg" alt="">
+        <div class="des">
+          <span>Jockey</span>
+          <h5>Jacky Trousser</h5>
+          <h4>$99</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Jacky Trousser', 99, 'img/products/n6.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+      <!-- ✅ Product 15 -->
+      <div class="pro">
+        <img src="img/products/n7.jpg" alt="">
+        <div class="des">
+          <span>Max</span>
+          <h5>Blaky Shirt</h5>
+          <h4>$76</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Blaky Shirt', 76, 'img/products/n7.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+      <!-- ✅ Product 16 -->
+      <div class="pro">
+        <img src="img/products/n8.jpg" alt="">
+        <div class="des">
+          <span>Lemma</span>
+          <h5>Stripped Shirt</h5>
+          <h4>$69</h4>
+        </div>
+        <a href="#" class="cart-btn" onclick="addToCart('Stripped Shirt', 69, 'img/products/n8.jpg')">
+          <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Script for Add to Cart -->
+  <script>
+    function addToCart(title, price, image) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      let existing = cart.find(item => item.title === title);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ title, price, image, quantity: 1 });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(title + " added to cart!");
+    }
+  </script>
+
+</body>
+</html>

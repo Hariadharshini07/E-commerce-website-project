@@ -1,0 +1,27 @@
+this._s=this._s||{};(function(_){var window=this;
+try{
+_.r("QqJ8Gd");
+var ezc;
+_.fzc=function(a,b,c=!1,d,e){d=d||a.oa;if(!_.dzc(a,d))return!1;let f,g;try{g=c?_.Bw(a.Ca,d):null;f=d.createElement("textarea");f.value=b;f.setAttribute("readonly","");_.$m(f,"height",0);d.body.appendChild(f);if(a.Da)f.select();else{const h=d.createRange();h.selectNodeContents(f);a.Aa.getSelection().removeAllRanges();a.Aa.getSelection().addRange(h);f.setSelectionRange(0,b.length)}d.addEventListener("copy",h=>{h.clipboardData.setData("text/plain",b);e&&h.clipboardData.setData(e,b);h.preventDefault()},{once:!0,
+capture:!0});return ezc(a,d)}finally{f&&_.Nm(f),g&&_.Aw(g)}};ezc=function(a,b){b=b||a.oa;try{return _.dzc(a,b)?b.execCommand("copy"):!1}catch(c){return!1}};_.dzc=function(a,b){b=b||a.oa;b=b.queryCommandSupported("copy");!b&&a.Ba&&(a.Ba=!0);return b};
+_.fA=class extends _.$o{static Sa(){return{service:{focus:_.Iw,window:_.ap}}}constructor(a){super();this.Fl=null;this.oa=a.service.window.getDocument();this.Aa=a.service.window.get();this.Ca=a.service.focus;this.Da=!_.sa()&&!_.he.FKa();this.Ba=!1}copy(a,b=!1,c,d){c=c||this.oa;return a?_.fzc(this,a,b,c,d):ezc(this,c)}};_.bp(_.eA,_.fA);
+_.u();
+}catch(e){_._DumpException(e)}
+try{
+_.z4e=_.w("CHCSlb",[]);
+}catch(e){_._DumpException(e)}
+try{
+_.tyd=_.w("mzzZzc",[]);_.fd(_.tyd);
+}catch(e){_._DumpException(e)}
+try{
+_.F4e=_.w("fmklff",[_.Eh,_.tyd,_.z4e]);
+}catch(e){_._DumpException(e)}
+try{
+_.r("TdC3Wc");
+_.nSp=class extends _.$o{static Sa(){return{service:{clipboard:_.fA,window:_.BZ}}}constructor(a){super();this.Du=a.service.clipboard;this.oa=a.service.window}copy(a,b=0){this.Du.copy(a,!1,this.oa.getDocument())?(a=_.ma(),_.ka(a,"SamsungBrowser")||(_.ka(a,"Version/0.")||_.ka(a,"Version/1.")||_.ka(a,"Version/2.")||_.ka(a,"Version/3."))&&(_.ka(a,"SAMSUNG")||_.ka(a,"SM-")||_.ka(a,"SGH-"))||this.Oj("Text copied to clipboard",b)):this.Oj("Failed to copy text",b)}Oj(a,b){const c=this;return _.x(function*(){a:switch(b){case 0:var d=
+"yuChW";break a;case 1:d="yuChW YEw87d";break a;default:d=null}d&&(yield _.lSp(c,"snackbar",_.F4e)).oa({label:a,wI:!0,Wb:d})})}};_.bp(_.kSp,_.nSp);
+
+_.u();
+}catch(e){_._DumpException(e)}
+})(this._s);
+// Google Inc.
